@@ -1,6 +1,6 @@
 use std::env;
 use std::process;
-use minigrep::Config;
+use minigrep::{Config, run};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -11,7 +11,7 @@ fn main() {
     });
 
     if let Err(e) = run(config) {
-        println!("Application error: {err}");
+        println!("Application error: {e}");
         process::exit(1);
     }
 }
